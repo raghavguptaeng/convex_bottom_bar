@@ -576,12 +576,13 @@ class ConvexAppBarState extends State<ConvexAppBar>
           top: widget.top ?? CURVE_TOP,
           bottom: additionalBottomPadding,
           child: FractionallySizedBox(
-              widthFactor: factor,
-              alignment: offset,
-              child: GestureDetector(
-                onTap: () => _onTabClick(convexIndex),
-                child: _newTab(convexIndex, active),
-              )),
+            widthFactor: factor,
+            alignment: offset,
+            child: GestureDetector(
+              onTap: () => _onTabClick(convexIndex),
+              child: _newTab(convexIndex, active),
+            ),
+          ),
         ),
       ],
     );
@@ -598,13 +599,15 @@ class ConvexAppBarState extends State<ConvexAppBar>
         continue;
       }
       var active = _currentIndex == i;
-      children.add(Expanded(
-        child: GestureDetector(
-          behavior: HitTestBehavior.opaque,
-          onTap: () => _onTabClick(i),
-          child: _newTab(i, active),
+      children.add(
+        Expanded(
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => _onTabClick(i),
+            child: _newTab(i, active),
+          ),
         ),
-      ));
+      );
     }
 
     return Container(

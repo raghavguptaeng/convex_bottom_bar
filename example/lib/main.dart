@@ -56,7 +56,7 @@ class HelloConvexAppBar extends StatelessWidget {
       bottomNavigationBar: ConvexAppBar(
         style: TabStyle.react,
         items: [
-          TabItem(icon: Icons.list),
+          TabItem(icon: Icons.list,title: "Raghav Gupta is a Raf",wrapText: true),
           TabItem(icon: Icons.calendar_today),
           TabItem(icon: Icons.assessment),
         ],

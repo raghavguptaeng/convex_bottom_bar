@@ -53,8 +53,19 @@ class ReactTabStyle extends InnerBuilder {
         ),
       ];
       if (!noLabel) {
-        children.add(Text(item.title ?? '',
-            style: style.textStyle(activeColor, item.fontFamily)));
+        children.add(
+          Container(
+            width: MediaQuery.of(context).size.width*0.2,
+            child: Text(
+              item.title ?? '',
+              style: style.textStyle(
+                activeColor,
+                item.fontFamily,
+              ),
+              softWrap: item.wrapText,
+            ),
+          ),
+        );
       }
       return Container(
         padding: const EdgeInsets.only(bottom: 2),
